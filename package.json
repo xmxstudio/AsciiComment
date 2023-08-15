@@ -1,0 +1,33 @@
+{
+  "name": "asciicomment-extension",
+  "displayName": "AsciiComment Extension",
+  "description": "Convert current line of text to ASCII art comments",
+  "version": "1.0.0",
+  "publisher": "xmetrix",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xmxstudio/vscode-AsciiComment.git"
+  },
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": ["onCommand:asciiArtConvert"],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.asciiArtConvert",
+        "title": "Convert to AsciiComment",
+        "category": "Edit"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "extension.asciiArtConvert",
+        "key": "ctrl+shift+/",
+        "when": "editorTextFocus"
+      }
+    ]
+  }
+}
