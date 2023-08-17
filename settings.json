@@ -1,0 +1,3 @@
+{
+  "asciicomment.asciiArtCommand": "echo \"${text}\" | toilet -F border -f future"
+}
