@@ -28,3 +28,5 @@ import { blah } from blah
 import { taco, burrito } from tacobell
 
 ```
+
+Go to settings (ctrl + ,) and you can change the font used in toilet or change the entire command. 
