@@ -3,10 +3,11 @@
   "displayName": "AsciiComment Extension",
   "description": "Convert current line of text to ASCII art comments",
   "version": "1.0.0",
-  "publisher": "xmetrix",
+  "publisher": "xmxstudio",
+  "icon": "dark-icon.png",  
   "repository": {
     "type": "git",
-    "url": "https://github.com/xmxstudio/vscode-AsciiComment.git"
+    "url": "https://github.com/xmxstudio/AsciiComment.git"
   },
   "engines": {
     "vscode": "^1.60.0"
@@ -28,6 +29,16 @@
         "key": "ctrl+shift+/",
         "when": "editorTextFocus"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "AsciiComment",
+      "properties": {
+        "asciicomment.asciiArtCommand": {
+          "type": "string",
+          "default": "echo \"${currentLine}\" | toilet -F border -f future",
+          "description": "The command used to generate ASCII art"
+        }
+      }
+    }
   }
 }
