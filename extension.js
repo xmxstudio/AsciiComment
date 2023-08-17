@@ -1,43 +1,7 @@
 const vscode = require("vscode");
 const { execSync } = require("child_process");
 
-// function activate(context) {
-//   console.log("AsciiComment Extension is now active.");
-
-//   let disposable = vscode.commands.registerCommand(
-//     "extension.asciiArtConvert",
-//     async () => {
-//       const editor = vscode.window.activeTextEditor;
-
-//       if (!editor) {
-//         return;
-//       }
-
-//       const currentLine = editor.document.lineAt(editor.selection.active.line);
-//       const selectedText = currentLine.text;
-
-//       try {
-//         const asciiArt = execSync(`echo "${selectedText}" | toilet -F border -f future`, {encoding: "utf-8"});
-
-//         const commentAsciiArt = `${asciiArt.trim().split("\n").map(x=>`// ${x}`).join("\n")}`;
-
-//         await editor.edit((editBuilder) => {
-//           const selectionRange = new vscode.Range(
-//             currentLine.range.start,
-//             currentLine.range.end
-//           );
-//           editBuilder.replace(selectionRange, commentAsciiArt);
-//         });
-//       } catch (error) {
-//         vscode.window.showErrorMessage("Error converting to AsciiComment.");
-//       }
-//     }
-//   );
-
-//   context.subscriptions.push(disposable);
-// }
 function activate(context) {
-  // ...
 
   let disposable = vscode.commands.registerCommand(
     "extension.asciiArtConvert",
@@ -56,14 +20,9 @@ function activate(context) {
       }
 
       const config = vscode.workspace.getConfiguration("asciicomment");
-      console.log(config);
-
       const asciiArtCommand = config.get("asciiArtCommand", "");
-console.log(asciiArtCommand);
       try {
-        const asciiArt = execSync(asciiArtCommand.replace("${currentLine}", selectedText), {
-          encoding: "utf-8",
-        });
+        const asciiArt = execSync(asciiArtCommand.replace("${currentLine}", selectedText), {encoding: "utf-8",});
         const commentAsciiArt = `${asciiArt.trim().split("\n").map(x=>`// ${x}`).join("\n")}`;
 
                 await editor.edit((editBuilder) => {
@@ -75,8 +34,7 @@ console.log(asciiArtCommand);
                 });
       } catch (error) {
         console.log(error);
-        // vscode.window.showErrorMessage("Error converting to AsciiComment.");
-        vscode.window.showErrorMessage(error);
+        vscode.window.showErrorMessage("Error converting to AsciiComment.");
       }
     }
   );
