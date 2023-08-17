@@ -4,7 +4,7 @@
   "description": "Convert current line of text to ASCII art comments",
   "version": "1.0.0",
   "publisher": "xmxstudio",
-  "icon": "dark-icon.png",  
+  "icon": "dark-logo.png",  
   "repository": {
     "type": "git",
     "url": "https://github.com/xmxstudio/AsciiComment.git"
