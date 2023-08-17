@@ -2,7 +2,7 @@
   "name": "asciicomment-extension",
   "displayName": "AsciiComment Extension",
   "description": "Convert current line of text to ASCII art comments",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "publisher": "xmxstudio",
   "icon": "dark-logo.png",  
   "repository": {
